@@ -1,10 +1,50 @@
+/* === MOTYW - ZMIENNE === */
+:root {
+  --accent-color: #2a7af5;
+  --submit-bg: #51bb56;
+  --submit-bg-hover: #45a049;
+
+  --form-bg-light: #ffffff;
+  --form-text-light: #000000;
+  --form-shadow-light: 0 4px 18px rgba(0, 0, 0, 0.3);
+  --input-bg-light: #ffffff;
+  --input-text-light: #000000;
+  --input-border-light: #888888;
+  --fieldset-border-light: #cccccc;
+  --color-input-bg-light: #dddddd;
+
+  --form-bg-dark: #060606;
+  --form-text-dark: #f5f5f5;
+  --form-shadow-dark: 0 4px 18px rgba(0, 0, 0, 0.6);
+  --input-bg-dark: #2b2b2b;
+  --input-text-dark: #f5f5f5;
+  --input-border-dark: #666666;
+  --fieldset-border-dark: #666666;
+  --color-input-bg-dark: #1f1f1f;
+
+  --color-scheme-light: light;
+  --color-scheme-dark: dark;
+}
+
 /* === KONTENER GŁÓWNY === */
+/* Domyślne wartości fallback motyw jasny */
 .competition-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 2rem auto;
   max-width: 500px;
+  --form-bg: var(--form-bg-light);
+  --form-text: var(--form-text-light);
+  --form-shadow: var(--form-shadow-light);
+  --input-bg: var(--input-bg-light);
+  --input-text: var(--input-text-light);
+  --input-border: var(--input-border-light);
+  --fieldset-border: var(--fieldset-border-light);
+  --color-input-bg: var(--color-input-bg-light);
+  --control-color-scheme: var(--color-scheme-light);
+  --sun-display: inline;
+  --moon-display: none;
 }
 
 /* === NAGŁÓWEK NAD FORMULARZEM === */
@@ -29,20 +69,37 @@
   transition: transform 0.25s ease;
   align-self: flex-end;
   margin-bottom: 0.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
 }
 
 .theme-label:hover {
   transform: rotate(15deg);
 }
 
+.theme-label .theme-sun {
+  display: var(--sun-display);
+}
+
+.theme-label .theme-moon {
+  display: var(--moon-display);
+}
+
 /* === FORMULARZ === */
 .contest-form {
-  background: #fff;
+  background: var(--form-bg);
+  color: var(--form-text);
   border-radius: 12px;
   padding: 2rem 2.5rem;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--form-shadow);
   width: 100%;
   box-sizing: border-box;
+  color-scheme: var(--control-color-scheme);
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* === POLA TEKSTOWE === */
@@ -50,7 +107,7 @@
   display: block;
   margin-top: 1rem;
   font-weight: 500;
-
+  /* domyslnie jest top margin dla labeli ale dla 1 elementu nie dajemty */
   &:first-of-type {
     margin-top: 0;
   }
@@ -62,26 +119,34 @@
 .contest-form input[type='number'] {
   width: 100%;
   padding: 0.6rem 0.75rem;
-  border: 1px solid #888;
+  border: 1px solid var(--input-border);
   margin-top: 0.3rem;
   font-size: 1rem;
   box-sizing: border-box;
+  background: var(--input-bg);
+  color: var(--input-text);
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .contest-form select {
   width: 100%;
   padding: 0.6rem 0.75rem;
-  border: 1px solid #888;
+  border: 1px solid var(--input-border);
   margin-top: 0.3rem;
   font-size: 1rem;
   box-sizing: border-box;
   cursor: pointer;
+  background: var(--input-bg);
+  color: var(--input-text);
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .contest-form input:focus,
 .contest-form select:focus {
   outline: none;
-  border-color: #2a7af5;
+  border-color: var(--accent-color);
   box-shadow: 0 0 4px rgba(42, 122, 245, 0.4);
 }
 
@@ -89,22 +154,27 @@
 .contest-form input[type='color'] {
   width: 100%;
   height: 2.6rem;
-  border: 1px solid #888;
-  background: #dddddd;
+  border: 1px solid var(--input-border);
+  background: var(--color-input-bg);
   padding: 1px 2px;
   cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 /* === RADIO / FIELDSET === */
 .contest-form fieldset {
   margin-top: 1.2rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--fieldset-border);
   padding: 0.8rem 1rem 1rem;
+  background: var(--input-bg);
+  color: var(--form-text);
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .contest-form legend {
   font-weight: 600;
   padding: 0 0.4rem;
+  color: var(--form-text);
 }
 
 .contest-form fieldset label {
@@ -133,7 +203,7 @@
   display: block;
   width: 100%;
   margin-top: 1.5rem;
-  background: #51bb56;
+  background: var(--submit-bg);
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -145,7 +215,7 @@
 }
 
 .contest-form button[type='submit']:hover {
-  background: #45a049;
+  background: var(--submit-bg-hover);
   transform: scale(1.01);
 }
 
@@ -166,48 +236,63 @@
   }
 }
 
-/* === CIEMNY MOTYW === */
-
-/* Domyślnie wymuś JASNY wygląd kontrolek */
-.contest-form {
-  color-scheme: light;
-}
-
-/* Po przełączeniu – zmień na DARK */
-#theme-toggle:checked ~ .contest-form {
-  background: #060606;
-  color: #f5f5f5;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
-  color-scheme: dark; /* <-- to aktywuje ciemne natywne kontrolki */
-}
-
-/* Stylowanie pól */
-.contest-form input,
-.contest-form select,
-.contest-form fieldset {
-  background: #fff;
-  color: #000;
-}
-
-#theme-toggle:checked ~ .contest-form input,
-#theme-toggle:checked ~ .contest-form select,
-#theme-toggle:checked ~ .contest-form fieldset {
-  background: #2b2b2b;
-  color: #f5f5f5;
-  border-color: #666;
-}
-
-/* Checkboxy i radio */
+/* === Checkboxy i radio === */
 .contest-form input[type='checkbox'],
 .contest-form input[type='radio'] {
-  accent-color: #2a7af5;
-  background-color: #fff;
+  accent-color: var(--accent-color);
+  background-color: var(--input-bg);
   cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-#theme-toggle:checked ~ .contest-form input[type='checkbox'],
-#theme-toggle:checked ~ .contest-form input[type='radio'] {
-  accent-color: #2a7af5;
-  background-color: #2b2b2b;
-  cursor: pointer;
+/* === CIEMNY MOTYW ============== */
+/* Fallback jest na light więc sprawdzamy tylko czy ma dark ustawione jeśli tak - zmienne ustawiamy na wersje dark */
+@media (prefers-color-scheme: dark) {
+  .competition-form {
+    --form-bg: var(--form-bg-dark);
+    --form-text: var(--form-text-dark);
+    --form-shadow: var(--form-shadow-dark);
+    --input-bg: var(--input-bg-dark);
+    --input-text: var(--input-text-dark);
+    --input-border: var(--input-border-dark);
+    --fieldset-border: var(--fieldset-border-dark);
+    --color-input-bg: var(--color-input-bg-dark);
+    --control-color-scheme: var(--color-scheme-dark);
+    --sun-display: none;
+    --moon-display: inline;
+  }
 }
+
+/* Z fallbacka jeśli jest light -> to check oznacza przełączenie zmiennych na -dark */
+/* wybieramy na tym samym poziomie (sibling) to co ma klasę comptetition-form i jest oczywiście po checkboxie */
+#theme-toggle:checked ~ .competition-form {
+  --form-bg: var(--form-bg-dark);
+  --form-text: var(--form-text-dark);
+  --form-shadow: var(--form-shadow-dark);
+  --input-bg: var(--input-bg-dark);
+  --input-text: var(--input-text-dark);
+  --input-border: var(--input-border-dark);
+  --fieldset-border: var(--fieldset-border-dark);
+  --color-input-bg: var(--color-input-bg-dark);
+  --control-color-scheme: var(--color-scheme-dark);
+  --sun-display: none;
+  --moon-display: inline;
+}
+/* jeśli wykryło dark mamy zaprzeczenie dla logiki check -> checked oznacza przełączenie na jasny motyw */
+@media (prefers-color-scheme: dark) {
+  #theme-toggle:checked ~ .competition-form {
+    --form-bg: var(--form-bg-light);
+    --form-text: var(--form-text-light);
+    --form-shadow: var(--form-shadow-light);
+    --input-bg: var(--input-bg-light);
+    --input-text: var(--input-text-light);
+    --input-border: var(--input-border-light);
+    --fieldset-border: var(--fieldset-border-light);
+    --color-input-bg: var(--color-input-bg-light);
+    --control-color-scheme: var(--color-scheme-light);
+    --sun-display: inline;
+    --moon-display: none;
+  }
+}
+
+/* Kaskada i kolejność oraz zmienne działają jak dwa if-y */

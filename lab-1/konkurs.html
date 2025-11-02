@@ -32,17 +32,23 @@
     <main>
       <h1>Konkurs</h1>
 
+      <!--  PRZED to musi byc -->
+      <input type="checkbox" id="theme-toggle" hidden />
+      <!-- po id się #theme-toggle:checked można -->
+
+      <!-- form -->
       <section class="competition-form">
         <div class="form-header">
           <h2>
             Zgłoszenie <br />
             do Konkursu Plastycznego
           </h2>
-          <label for="theme-toggle" class="theme-label" title="Zmień motyw"
-            >🌗</label
-          >
+          <!-- osobno label żeby mógł być różny -->
+          <label for="theme-toggle" class="theme-label" title="Zmień motyw">
+            <span class="theme-sun">🌞</span>
+            <span class="theme-moon">🌙</span>
+          </label>
         </div>
-
         <input type="checkbox" id="theme-toggle" hidden />
         <!-- atrybuty
          autocomplete - mechanizm przeglądarki;
