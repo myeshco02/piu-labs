@@ -1,0 +1,213 @@
+/* === KONTENER GŁÓWNY === */
+.competition-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 500px;
+}
+
+/* === NAGŁÓWEK NAD FORMULARZEM === */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.theme-label {
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  align-self: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.theme-label:hover {
+  transform: rotate(15deg);
+}
+
+/* === FORMULARZ === */
+.contest-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* === POLA TEKSTOWE === */
+.contest-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.contest-form input[type='text'],
+.contest-form input[type='email'],
+.contest-form input[type='date'],
+.contest-form input[type='number'] {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #888;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.contest-form select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #888;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.contest-form input:focus,
+.contest-form select:focus {
+  outline: none;
+  border-color: #2a7af5;
+  box-shadow: 0 0 4px rgba(42, 122, 245, 0.4);
+}
+
+/* === KOLOR PRAC === */
+.contest-form input[type='color'] {
+  width: 100%;
+  height: 2.6rem;
+  border: 1px solid #888;
+  background: #dddddd;
+  padding: 1px 2px;
+  cursor: pointer;
+}
+
+/* === RADIO / FIELDSET === */
+.contest-form fieldset {
+  margin-top: 1.2rem;
+  border: 1px solid #ccc;
+  padding: 0.8rem 1rem 1rem;
+}
+
+.contest-form legend {
+  font-weight: 600;
+  padding: 0 0.4rem;
+}
+
+.contest-form fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+/* === ZGODA === */
+.contest-form .agreement {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.contest-form .agreement label {
+  cursor: pointer;
+}
+
+/* === PRZYCISK === */
+.contest-form button[type='submit'] {
+  display: block;
+  width: 100%;
+  margin-top: 1.5rem;
+  background: #51bb56;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.contest-form button[type='submit']:hover {
+  background: #45a049;
+  transform: scale(1.01);
+}
+
+/* === MOBILE === */
+@media (max-width: 540px) {
+  .contest-form {
+    padding: 1.5rem;
+  }
+
+  .form-header {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .form-header h2 {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+}
+
+/* === CIEMNY MOTYW === */
+
+/* Domyślnie wymuś JASNY wygląd kontrolek */
+.contest-form {
+  color-scheme: light;
+}
+
+/* Po przełączeniu – zmień na DARK */
+#theme-toggle:checked ~ .contest-form {
+  background: #060606;
+  color: #f5f5f5;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+  color-scheme: dark; /* <-- to aktywuje ciemne natywne kontrolki */
+}
+
+/* Stylowanie pól */
+.contest-form input,
+.contest-form select,
+.contest-form fieldset {
+  background: #fff;
+  color: #000;
+}
+
+#theme-toggle:checked ~ .contest-form input,
+#theme-toggle:checked ~ .contest-form select,
+#theme-toggle:checked ~ .contest-form fieldset {
+  background: #2b2b2b;
+  color: #f5f5f5;
+  border-color: #666;
+}
+
+/* Checkboxy i radio */
+.contest-form input[type='checkbox'],
+.contest-form input[type='radio'] {
+  accent-color: #2a7af5;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+#theme-toggle:checked ~ .contest-form input[type='checkbox'],
+#theme-toggle:checked ~ .contest-form input[type='radio'] {
+  accent-color: #2a7af5;
+  background-color: #2b2b2b;
+  cursor: pointer;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Uwagi</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <a
+        href="index.html"
+        style="color: #fff; font-weight: 700"
+        title="Strona główna"
+        >Mieszko Iwaniec</a
+      >
+      <nav>
+        <ul>
+          <li>
+            <a href="login.html" title="Zaloguj się">Login</a>
+          </li>
+          <li>
+            <a href="konkurs.html" title="Zapisz się na konkurs">Konkurs</a>
+          </li>
+          <li>
+            <a href="uwagi.html" title="Uwagi do strony" class="active"
+              >Uwagi</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Uwagi</h1>
+      <section class="ogolne">
+        <h2>Ogólne uwagi do formularzy</h2>
+        <div>
+          <h3>Fundament interaktywnego internetu</h3>
+          <p>
+            Formularze rónego typu stały się punktem zwrotnym dla rozwoju
+            internetu - wcześniej użytkownik był biernym odbiorcą statycznych
+            treści. Formularze umożliwiły kontrolowaną ale i rozbudowaną formę
+            komunikacji z serwerem.
+          </p>
+        </div>
+        <div>
+          <h3>Uniwersalność</h3>
+          <p>
+            Formularze można stosować wszędzie tam, gdzie chcemy uzyskać
+            jakikolwiek input od użytkownika
+          </p>
+          <ul>
+            <li>rejestracja i logowanie</li>
+            <li>newslettery, subsktypcje, marketing</li>
+            <li>ankiety, zbieranie surowych danych, zapisy, bookowanie</li>
+            <li>sklepy internetowe, płatności, bankowość</li>
+            <li>komentarze, fora, platformy społecznościowe</li>
+            <li>konfiguratory, kreatory</li>
+            <li>współczesne aplikacje webowe</li>
+          </ul>
+        </div>
+        <div class="tak">
+          <h3>Kiedy stosować</h3>
+          <p>
+            Praktycznie <em>wszędzie</em> w jakieś formie. W dzisiejszym
+            internecie praktycznie nie ma już stron, które nie mają żadnego
+            formularza (najprostsze logowanie, komentarz, newsletter, kontakt =
+            jakiś rodzaj formularza)
+          </p>
+        </div>
+        <div class="nie">
+          <h3>Kiedy <strong>nie</strong> stosować</h3>
+          <p>
+            Nie są wymagane dla czysto statycznych, informacyjnych stron typu
+            prosta dokumentacja markdown (np. czysty docosaurus bez
+            wyszukiwania)
+          </p>
+          <p>
+            W praktyce pytanie można zadać inaczej:
+            <i>Kiedy nie stosować 'czystych HTML-owych formularzy?</i>
+          </p>
+          <p>
+            Odpowiedź brzmi: wszędzie gdzie potrzeba reponsywnego UX,
+            interaktywności, dynamicznej walidacji po stronie frontend ->
+            sięgamy po JS/inne frameworki
+          </p>
+        </div>
+        <h2>Dodatkowo</h2>
+        <div>
+          <h3>CSS i HTML</h3>
+          <p>
+            O ile HTML jest dość czytelny, odpowiada za strukturę, to CSS można
+            łatwo przeładować i się pogubić. Dziejszy CSS3 jest jednak dość
+            potężny jak chodzi o animacje itp. Jednak lepiej działać z nim
+            modularnie, żeby nie skończyć z jednym plikiem z tysiącami linijek.
+            Po CSS dobrze jednak poznać inne frameworki typu Tailwind. W czystym
+            CSS panowanie nad spójnością designu jest skomplikowane i okazuje
+            się, że w szczególnych przypadkach <q>How to center a div</q>wydaje
+            się niemożliwe. Nie mówiąc o tym, że różne przeglądarki lubią
+            rysować strony w różny sposób...
+          </p>
+        </div>
+      </section>
+
+      <section class="podsumowanie">
+        <h2>Podsumowanie</h2>
+        <p class="cta">Najedź na karty, aby zobaczyć więcej szczegółów.</p>
+        <div class="notes">
+          <div class="note-card">
+            <div class="note-inner">
+              <div class="note-front">
+                <h3>Formularz jako podstawa</h3>
+              </div>
+              <div class="note-back">
+                <p>
+                  Klasyczne formularze HTML to solidna podstawa praktycznie
+                  każdej strony. Zapewniają interaktywność dla użytkowników.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="note-card">
+            <div class="note-inner">
+              <div class="note-front">
+                <h3>Bez JS - da się, ALE...</h3>
+              </div>
+              <div class="note-back">
+                <p>
+                  W dzisiejszych czasach JS lub inne pokrewne frameworki w
+                  zakresie tematu formularzy zdecydowanie poszerzają horyzonty w
+                  zakresie UI/UX
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

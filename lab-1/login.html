@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <a
+        href="index.html"
+        style="color: #fff; font-weight: 700"
+        title="Strona główna"
+        >Mieszko Iwaniec</a
+      >
+      <nav>
+        <ul>
+          <li>
+            <a href="login.html" title="Zaloguj się" class="active">Login</a>
+          </li>
+          <li>
+            <a href="konkurs.html" title="Zapisz się na konkurs">Konkurs</a>
+          </li>
+          <li><a href="uwagi.html" title="Uwagi do strony">Uwagi</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Login</h1>
+      <!-- LOGOWANIE -->
+      <div class="login">
+        <form action="https://httpbin.org/post" method="post">
+          <h2>Zaloguj się</h2>
+
+          <label for="username">Nazwa użytkownika</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Wpisz nazwę użytkownika"
+            autocomplete="username"
+            autocapitalize="off"
+            autocorrect="off"
+            spellcheck="false"
+            required
+          />
+
+          <label for="password">Hasło</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Wpisz hasło"
+            autocomplete="current-password"
+            autocapitalize="off"
+            autocorrect="off"
+            spellcheck="false"
+            required
+          />
+
+          <!-- NA POTEM BO TERAZ NIE UŻYWAĆ JS-->
+          <div class="remember">
+            <label>
+              <input type="checkbox" name="remember" disabled />
+              <span>Zapamiętaj mnie</span>
+            </label>
+          </div>
+
+          <button type="submit">Zaloguj</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

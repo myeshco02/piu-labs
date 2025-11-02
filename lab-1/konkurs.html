@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Konkurs</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/konkurs.css" />
+  </head>
+  <body>
+    <header>
+      <a
+        href="index.html"
+        style="color: #fff; font-weight: 700"
+        title="Strona główna"
+        >Mieszko Iwaniec</a
+      >
+      <nav>
+        <ul>
+          <li>
+            <a href="login.html" title="Zaloguj się">Login</a>
+          </li>
+          <li>
+            <a href="konkurs.html" title="Zapisz się na konkurs" class="active"
+              >Konkurs</a
+            >
+          </li>
+          <li><a href="uwagi.html" title="Uwagi do strony">Uwagi</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Konkurs</h1>
+
+      <section class="competition-form">
+        <div class="form-header">
+          <h2>
+            Zgłoszenie <br />
+            do Konkursu Plastycznego
+          </h2>
+          <label for="theme-toggle" class="theme-label" title="Zmień motyw"
+            >🌗</label
+          >
+        </div>
+
+        <input type="checkbox" id="theme-toggle" hidden />
+        <!-- atrybuty
+         autocomplete - mechanizm przeglądarki;
+         autocapitalize - mechanizm systemu i klawiatur: głownie mobile;
+         spellcheck - funkcja przeglądarki współpracuje z systemowym słownikiem; -->
+        <form
+          action="https://httpbin.org/post"
+          method="post"
+          class="contest-form"
+        >
+          <label for="name">Imię:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            maxlength="30"
+            autocomplete="given-name"
+            autocapitalize="words"
+            spellcheck="false"
+            required
+          />
+
+          <label for="surname">Nazwisko:</label>
+          <input
+            type="text"
+            id="surname"
+            name="surname"
+            maxlength="50"
+            autocomplete="family-name"
+            autocapitalize="words"
+            spellcheck="false"
+            required
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            required
+          />
+
+          <label for="city">Miasto:</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            placeholder="Wpisz lub wybierz"
+            list="cities"
+            autocapitalize="words"
+            required
+          />
+          <datalist id="cities">
+            <option value="Warszawa" />
+            <option value="Kraków" />
+            <option value="Gdańsk" />
+            <option value="Poznań" />
+            <option value="Wrocław" />
+          </datalist>
+
+          <label for="birthdate">Data urodzenia:</label>
+          <input
+            type="date"
+            id="birthdate"
+            name="birthdate"
+            lang="pl"
+            autocomplete="bday"
+            required
+          />
+          <!-- HTML ma prostą walidację dat ale tylko min max 
+           - realna walidacja z obliczeniem to ju w JS więc nie ma sensu ustawiać-->
+
+          <label for="works">Liczba zgłaszanych prac (od 1 do 6):</label>
+          <input
+            type="number"
+            id="works"
+            name="works"
+            min="1"
+            max="6"
+            autocomplete="off"
+            required
+          />
+
+          <label for="color">Kolor wiodący prac:</label>
+          <input type="color" id="color" name="color" value="#FFDD00" />
+
+          <label for="category">Kategoria pracy:</label>
+          <select id="category" name="category" required>
+            <option value="">-- wybierz kategorię --</option>
+            <option value="malarstwo">Malarstwo</option>
+            <option value="rysunek">Rysunek</option>
+            <option value="grafika">Grafika komputerowa</option>
+          </select>
+
+          <fieldset>
+            <legend>Publikacja pracy online:</legend>
+            <label
+              ><input type="radio" name="publish" value="tak" required />
+              Tak</label
+            >
+            <label><input type="radio" name="publish" value="nie" /> Nie</label>
+          </fieldset>
+
+          <label class="agreement">
+            <input type="checkbox" name="agreement" required />
+            Zgadzam się na regulamin konkursu
+          </label>
+
+          <button type="submit">Wyślij zgłoszenie</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
