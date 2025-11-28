@@ -59,10 +59,6 @@ q {
   font-family: monospace;
 }
 
-pre {
-  /* TODO dodać align center, responsywne clamp podobnie jak w h1 ale trochę mniejsze, więszke odstępy między literami, nie pogub się bo to jest style.css w folderze lab-2 a lab-1 NIE RUSZAJ */
-}
-
 /* ====================================== HEADER */
 
 header {

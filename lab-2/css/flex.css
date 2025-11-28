@@ -1,0 +1,270 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --gap: 14px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap);
+  padding: 12px;
+  border: 2px solid #e6a96b;
+  background: #fff7e3;
+  border-radius: 8px;
+}
+
+.item {
+  width: 100%;
+  max-width: 720px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.theme-picker {
+  background: #fff9e9;
+  border: 2px solid #e2a364;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.theme-picker legend {
+  font-weight: 600;
+  color: #000;
+  padding: 0 0.4rem;
+}
+
+.theme-picker label {
+  margin-right: 0.8rem;
+}
+
+body:has(input[name='version'][value='blue']:checked) {
+  --c: #0942f0;
+  --c-b: #001f99;
+}
+
+body:has(input[name='version'][value='blue']:checked) .item {
+  background: var(--c);
+  border-color: var(--c-b);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  body:has(input[name='version'][value='blue']:checked) .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: var(--gap);
+  }
+
+  body:has(input[name='version'][value='blue']:checked) .item {
+    max-width: none;
+    flex: 0 1 calc((100% - 2 * var(--gap)) / 3);
+  }
+}
+
+body:has(input[name='version'][value='red']:checked) {
+  --c: #e61c1c;
+  --c-b: #b31212;
+}
+
+body:has(input[name='version'][value='red']:checked) .item {
+  background: var(--c);
+  border-color: var(--c-b);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body:has(input[name='version'][value='red']:checked) .item:nth-child(2) {
+  order: 1;
+}
+
+body:has(input[name='version'][value='red']:checked) .item:nth-child(3) {
+  order: 2;
+}
+
+body:has(input[name='version'][value='red']:checked) .item:nth-child(1) {
+  order: 3;
+  font-weight: 700;
+}
+
+body:has(input[name='version'][value='red']:checked) .item:nth-child(4) {
+  order: 4;
+}
+
+body:has(input[name='version'][value='red']:checked) .item:nth-child(5) {
+  order: 5;
+}
+
+body:has(input[name='version'][value='red']:checked) .item:nth-child(1)::after {
+  content: '(Jestem większy i na środku!)';
+  display: block;
+  font-size: 0.8em;
+  font-weight: 400;
+  margin-top: 4px;
+  opacity: 0.95;
+}
+
+@media (min-width: 1024px) {
+  body:has(input[name='version'][value='red']:checked) .container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  body:has(input[name='version'][value='red']:checked) .item {
+    max-width: none;
+    flex: 1 1 200px;
+  }
+
+  body:has(input[name='version'][value='red']:checked) .item:nth-child(1) {
+    flex: 2 1 360px;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  body:has(input[name='version'][value='red']:checked) .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  body:has(input[name='version'][value='red']:checked) .item {
+    flex: 1 1 310px;
+    max-width: none;
+  }
+
+  body:has(input[name='version'][value='red']:checked) .item:nth-child(1) {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  body:has(input[name='version'][value='red']:checked) .item {
+    flex-basis: 100%;
+  }
+}
+
+body:has(input[name='version'][value='green']:checked) {
+  --c: #118a14;
+  --c-b: #0d6c10;
+}
+
+body:has(input[name='version'][value='green']:checked) .item {
+  background: var(--c);
+  border: none;
+  width: 100%;
+  max-width: none;
+}
+
+body:has(input[name='version'][value='green']:checked)
+  .item:nth-child(1)::before,
+body:has(input[name='version'][value='green']:checked)
+  .item:nth-child(1)::after {
+  content: '😀';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  line-height: 0;
+  pointer-events: none;
+}
+
+body:has(input[name='version'][value='green']:checked)
+  .item:nth-child(1)::before {
+  left: 10px;
+}
+
+body:has(input[name='version'][value='green']:checked)
+  .item:nth-child(1)::after {
+  right: 10px;
+}
+
+@media (min-width: 1024px) {
+  body:has(input[name='version'][value='green']:checked) .container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: var(--gap);
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item {
+    flex: 0 0 auto;
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(1) {
+    width: calc((100% - 4 * var(--gap)) * 0.34);
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(2) {
+    width: calc((100% - 4 * var(--gap)) * 0.26);
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(3) {
+    width: calc((100% - 4 * var(--gap)) * 0.2);
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(4) {
+    width: calc((100% - 4 * var(--gap)) * 0.13);
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(5) {
+    width: calc((100% - 4 * var(--gap)) * 0.07);
+  }
+}
+
+@media (max-width: 1023.98px) {
+  body:has(input[name='version'][value='green']:checked) .container {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: var(--gap);
+    --step: 12%;
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(1) {
+    width: calc(100% - 0 * var(--step));
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(2) {
+    width: calc(100% - 1 * var(--step));
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(3) {
+    width: calc(100% - 2 * var(--step));
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(4) {
+    width: calc(100% - 3 * var(--step));
+  }
+
+  body:has(input[name='version'][value='green']:checked) .item:nth-child(5) {
+    width: calc(100% - 4 * var(--step));
+  }
+}
