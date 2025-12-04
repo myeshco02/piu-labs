@@ -2,11 +2,26 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <title>Lab 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/kanban.js" defer></script>
   </head>
   <body>
-    <h1>Lab 4</h1>
-    <a href="..">Powrót</a>
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">JavaScript w przeglądarce</p>
+        <h1>Tablica Kanban</h1>
+      </div>
+      <a class="back-link" href="..">Powrót</a>
+    </header>
+
+    <main>
+      <p class="intro">
+        Trzy kolumny, edytowalne karty z kolorami, przenoszeniem i zapisem w
+        localStorage.
+      </p>
+      <div id="board" class="kanban-board" aria-live="polite"></div>
+    </main>
   </body>
 </html>
