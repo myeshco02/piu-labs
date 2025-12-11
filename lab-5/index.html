@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kształty | Lab-5</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="heading">
+        <h1>Kształty</h1>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="controls" aria-label="Sterowanie kształtami">
+        <div class="buttons add">
+          <button type="button" data-action="add-square">
+            ▢ Dodaj kwadrat
+          </button>
+          <button type="button" data-action="add-circle">◯ Dodaj kółko</button>
+        </div>
+        <div class="buttons recolor">
+          <button type="button" data-action="recolor-squares">
+            🎨 Kwadraty
+          </button>
+          <button type="button" data-action="recolor-circles">🌈 Kółka</button>
+        </div>
+      </section>
+
+      <section class="status" aria-label="Liczniki kształtów">
+        <div class="counter">
+          <span>Kwadraty:</span>
+          <strong data-role="count-squares">0</strong>
+        </div>
+        <div class="counter">
+          <span>Kółka:</span>
+          <strong data-role="count-circles">0</strong>
+        </div>
+      </section>
+
+      <section class="board" aria-label="Lista kształtów" data-role="board">
+        <!-- kształty dodawane dynamicznie -->
+      </section>
+    </main>
+  </body>
+</html>
